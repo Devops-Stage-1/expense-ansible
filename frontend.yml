@@ -23,7 +23,7 @@
         dest: /usr/share/nginx/html
         remote_src: yes
 
-    - name: install nginx
-      ansible.builtin.dnf:
-        name: nginx
+    - name: Restart nginx
+      ansible.builtin.systemd_service:
         state: restarted
+        name: nginx

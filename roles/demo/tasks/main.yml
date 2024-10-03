@@ -1,3 +1,0 @@
-- name: accesing variable and printing a msg
-  ansible.builtin.debug:
-    msg: Hi {{ name }}

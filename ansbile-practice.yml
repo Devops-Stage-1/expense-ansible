@@ -1,5 +1,0 @@
-- name: role-practice
-  hosts: localhost
-  become: yes
-  roles:
-    - demo

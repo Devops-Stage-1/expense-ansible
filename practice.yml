@@ -4,4 +4,4 @@
     - name: print fruits
       ansible.builtin.debug:
         msg: We need to install
-      when: install
+      when: install | bool

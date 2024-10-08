@@ -9,6 +9,11 @@
     state: started
     enabled: true
 
+- name: Install bottle for Python 3.3 specifically, using the 'pip3.3' executable
+  ansible.builtin.pip:
+    name: PyMySQL
+    executable: pip
+
 - name: Collect all info except settings and users by root
   community.mysql.mysql_info:
     login_host: mysql.dkdevops.online

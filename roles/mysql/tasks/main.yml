@@ -1,0 +1,23 @@
+- name: mysql database
+  community.mysql.dnf:
+    name: mysql-server
+    state: installed
+
+- name: start mysql service
+  ansible.builtin.systemd_service:
+    name: mysqld
+    state: started
+    enabled: true
+
+- name: Collect all info except settings and users by root
+  community.mysql.mysql_info:
+    login_host: mysql.dkdevops.online
+    login_user: root
+    login_password: ExpenseApp@1
+    register: result
+    ignore_errors: yes
+
+- name: Mysql password setup
+  ansible.builtin.shell:
+    mysql_secure_installation --set-root-pass ExpenseApp@1
+  when: {{  result.failed }} is true

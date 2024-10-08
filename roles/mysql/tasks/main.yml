@@ -14,8 +14,8 @@
     login_host: mysql.dkdevops.online
     login_user: root
     login_password: ExpenseApp@1
-    register: result
-    ignore_errors: yes
+  register: result
+  ignore_errors: yes
 
 - name: Mysql password setup
   ansible.builtin.shell:

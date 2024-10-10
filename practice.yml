@@ -1,7 +1,6 @@
 - name: Loops
   hosts: localhost
   tasks:
-    - name: print fruits
+    - name: print
       ansible.builtin.debug:
         msg: We need to install
-      when: install | bool

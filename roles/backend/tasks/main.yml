@@ -40,11 +40,11 @@
 
 
 - name: Install mysql
-  ansible.builtin.dnf:
+  ansible.builtin.pip:
     name:
       - PyMySQL
       - cryptography
-    state: installed
+    executable: pip3.9
 
 - name: Load Schema
   community.mysql.mysql_db:

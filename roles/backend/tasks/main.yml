@@ -41,7 +41,7 @@
     dest: /etc/systemd/system/backend.service
 
 - name: Install mysql
-  ansible.built.dnf:
+  ansible.builtin.dnf:
     name:
       - PyMySQL
       - cryptography

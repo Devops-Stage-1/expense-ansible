@@ -34,9 +34,10 @@
     path: /app
 
 - name: Copy backend service file
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: backend.service
     dest: /etc/systemd/system/backend.service
+
 
 - name: Install mysql
   ansible.builtin.dnf:

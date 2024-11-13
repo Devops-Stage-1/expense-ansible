@@ -5,8 +5,8 @@
 
 - name: start nginx service
   ansible.builtin.systemd_service:
-    state: started
     name: nginx
+    state: started
 
 - name: Remove files
   ansible.builtin.file:
@@ -26,6 +26,6 @@
 
 - name: start nginx service
   ansible.builtin.systemd_service:
-    state: restarted
     name: nginx
+    state: restarted
     enables: yes

@@ -1,10 +1,8 @@
 - name: Disable old nodejs version
-  ansible.builtin.shell:
-    dnf module disable nodejs -y
+  ansible.builtin.shell: dnf module disable nodejs -y
 
 - name: Enable necessary nodejs version
-  ansible.builtin.shell:
-    dnf module enable nodejs:20 -y
+  ansible.builtin.shell: dnf module enable nodejs:20 -y
 
 - name: Install nodejs
   ansible.builtin.dnf:
@@ -54,7 +52,6 @@
     target: /app/schema/backend.sql
     login_user: root
     login_password: ExpenseApp@1
-    login_host:
 
 - name: Start Backend Service
   ansible.builtin.systemd_service:

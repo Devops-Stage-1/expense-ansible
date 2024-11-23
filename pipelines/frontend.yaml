@@ -41,7 +41,7 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - frontend-dev.dkdevops.online,
+                    - frontend-qa.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
@@ -61,7 +61,7 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - frontend-dev.dkdevops.online,
+                    - frontend-stage.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
@@ -81,7 +81,7 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - frontend-dev.dkdevops.online,
+                    - frontend-prod.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e

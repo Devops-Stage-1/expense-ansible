@@ -41,7 +41,7 @@
 - name: Install MySQL client
   ansible.builtin.dnf:
     name: mysql
-    state: present
+    state: installed
 
 - name: Install mysql
   ansible.builtin.pip:
@@ -49,6 +49,11 @@
       - PyMySQL
       - cryptography
     executable: pip3.9
+- name: Test MySQL connection
+  community.mysql.mysql_ping:
+    login_user: root
+    login_password: ExpenseApp@1
+    login_host: mysql-dev.dkdevops.online
 
 - name: Load Schema
   community.mysql.mysql_db:

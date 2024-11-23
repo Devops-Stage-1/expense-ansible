@@ -6,7 +6,6 @@ pipelines:
       git-4210a58:
         git: https://github.com/Devops-Stage-1/expense-ansible.git
         shallow_clone: false
-        auto_update: true
         branch: main
     stages:
     - dev:

@@ -1,6 +1,6 @@
 format_version: 10
 pipelines:
-  Frontend:
+  backend:
     group: defaultGroup
     materials:
       git-4210a58:
@@ -21,12 +21,12 @@ pipelines:
             - exec:
                 arguments:
                 - -i
-                - frontend-dev.dkdevops.online,
+                - backend-dev.dkdevops.online,
                 - -e
                 - ansible_user=ec2-user
                 - -e
                 - ansible_password=DevOps321
-                - frontend.yml
+                - backend.yml
                 command: ansible-playbook
                 run_if: passed
     - qa:
@@ -41,12 +41,12 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - frontend-dev.dkdevops.online,
+                    - backend-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - frontend.yml
+                    - backend.yml
                   command: ansible-playbook
                   run_if: passed
     - stage:
@@ -61,12 +61,12 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - frontend-dev.dkdevops.online,
+                    - backend-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - frontend.yml
+                    - backend.yml
                   command: ansible-playbook
                   run_if: passed
     - prod:
@@ -81,12 +81,12 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - frontend-dev.dkdevops.online,
+                    - backend-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - frontend.yml
+                    - backend.yml
                   command: ansible-playbook
                   run_if: passed
 

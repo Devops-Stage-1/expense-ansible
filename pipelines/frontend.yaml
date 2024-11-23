@@ -22,8 +22,10 @@ pipelines:
                 arguments:
                 - -i
                 - frontend-dev.dkdevops.online
-                - -e_username=ec2-user
-                - -e_password=DevOps321
+                - -e
+                - ansible_user=ec2-user
+                - -e
+                - ansible_password=DevOps321
                 - frontend.yml
                 command: ansible-playbook
                 run_if: passed

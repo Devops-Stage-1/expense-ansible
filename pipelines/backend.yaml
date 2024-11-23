@@ -26,6 +26,8 @@ pipelines:
                 - ansible_user=ec2-user
                 - -e
                 - ansible_password=DevOps321
+                - e
+                - ansible_python_interpreter=/usr/bin/python3.9
                 - backend.yml
                 command: ansible-playbook
                 run_if: passed

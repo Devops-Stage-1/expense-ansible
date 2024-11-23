@@ -21,7 +21,7 @@ pipelines:
             - exec:
                 arguments:
                 - -i
-                - frontend-dev.dkdevops.online
+                - frontend-dev.dkdevops.online,
                 - -e
                 - ansible_user=ec2-user
                 - -e

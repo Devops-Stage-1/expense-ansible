@@ -1,4 +1,4 @@
-- name: expense-ansbile
+- name: expense-ansible
   hosts: all
   become: yes
   roles:

@@ -26,7 +26,8 @@ pipelines:
                 - ansible_password=DevOps321
                 - -e
                 - ansible_python_interpreter=/usr/bin/python3.9
-                - backend.yml
+                - -e
+                - role_name=backend
                 command: ansible-playbook
                 run_if: passed
     - qa:
@@ -45,7 +46,8 @@ pipelines:
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - backend.yml
+                    - -e
+                    - role_name=backend
                   command: ansible-playbook
                   run_if: passed
     - stage:
@@ -64,7 +66,8 @@ pipelines:
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - backend.yml
+                    - -e
+                    - role_name=backend
                   command: ansible-playbook
                   run_if: passed
     - prod:
@@ -83,7 +86,8 @@ pipelines:
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - backend.yml
+                    - -e
+                    - role_name=backend
                   command: ansible-playbook
                   run_if: passed
 

@@ -1,4 +1,4 @@
-- name: frontend
+- name: expense-ansbile
   hosts: all
   become: yes
   roles:

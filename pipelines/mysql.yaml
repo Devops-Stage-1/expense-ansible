@@ -1,7 +1,7 @@
 format_version: 10
 pipelines:
   mysql:
-    group: defaultGroup
+    group: expense
     materials:
       git-4210a58:
         git: https://github.com/Devops-Stage-1/expense-ansible.git
@@ -11,8 +11,7 @@ pipelines:
     - dev:
         fetch_materials: true
         approval:
-          type: success
-          allow_only_on_success: false
+          type: manual
         jobs:
           Test:
             timeout: 0
@@ -31,8 +30,7 @@ pipelines:
     - qa:
         fetch_materials: true
         approval:
-          type: success
-          allow_only_on_success: false
+          type: manual
         jobs:
           Test:
             timeout: 0
@@ -51,8 +49,7 @@ pipelines:
     - stage:
         fetch_materials: true
         approval:
-          type: success
-          allow_only_on_success: false
+          type: manual
         jobs:
           Test:
             timeout: 0
@@ -71,8 +68,7 @@ pipelines:
     - prod:
         fetch_materials: true
         approval:
-          type: success
-          allow_only_on_success: false
+          type: manual
         jobs:
           Test:
             timeout: 0

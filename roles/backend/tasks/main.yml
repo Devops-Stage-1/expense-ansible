@@ -32,6 +32,7 @@
 - name: Install packages based on package.json.
   community.general.npm:
     path: /app
+    state: latest
 
 - name: Copy backend service file
   ansible.builtin.template:

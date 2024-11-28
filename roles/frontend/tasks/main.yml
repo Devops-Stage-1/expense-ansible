@@ -3,11 +3,6 @@
     name: nginx
     state: latest
 
-- name: start nginx service
-  ansible.builtin.systemd_service:
-    name: nginx
-    state: started
-
 - name: Remove files
   ansible.builtin.file:
     path: /usr/share/nginx/html/*
@@ -28,4 +23,4 @@
   ansible.builtin.systemd_service:
     name: nginx
     state: restarted
-    enabled: yes
+    enabled: true

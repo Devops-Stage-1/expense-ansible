@@ -51,6 +51,13 @@
       - cryptography
     executable: pip3.11
 
+- name: Get MySQL version with non-default credentials
+  community.mysql.mysql_info:
+    login_user: root
+    login_password: ExpenseApp@1
+    login_host: mysql-dev.dkdevops.online
+    filter: version
+
 - name: Load Schema
   community.mysql.mysql_db:
     state: import

@@ -40,7 +40,7 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - mysql-dev.dkdevops.online,
+                    - mysql-qa.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
@@ -61,7 +61,7 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - mysql-dev.dkdevops.online,
+                    - mysql-prod.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
@@ -82,7 +82,7 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - mysql-dev.dkdevops.online,
+                    - mysql-prod.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e

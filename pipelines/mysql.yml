@@ -1,7 +1,7 @@
 format_version: 10
 pipelines:
   mysql:
-    group: expense
+    group: expense-ansible
     materials:
       git-4210a58:
         git: https://github.com/Devops-Stage-1/expense-ansible.git

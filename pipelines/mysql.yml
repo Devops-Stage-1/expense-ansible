@@ -24,7 +24,9 @@ pipelines:
                 - ansible_user=ec2-user
                 - -e
                 - ansible_password=DevOps321
-                - mysql.yml
+                - expense.yml
+                - e
+                - role_name=mysql
                 command: ansible-playbook
                 run_if: passed
     - qa:
@@ -38,12 +40,14 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - mysql-qa.dkdevops.online,
+                    - mysql-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - mysql.yml
+                    - expense.yml
+                    - e
+                    - role_name=mysql
                   command: ansible-playbook
                   run_if: passed
     - stage:
@@ -57,12 +61,14 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - mysql-stage.dkdevops.online,
+                    - mysql-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - mysql.yml
+                    - expense.yml
+                    - e
+                    - role_name=mysql
                   command: ansible-playbook
                   run_if: passed
     - prod:
@@ -76,12 +82,14 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - mysql-prod.dkdevops.online,
+                    - mysql-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - mysql.yml
+                    - expense.yml
+                    - e
+                    - role_name=mysql
                   command: ansible-playbook
                   run_if: passed
 

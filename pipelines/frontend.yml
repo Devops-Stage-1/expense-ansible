@@ -25,7 +25,9 @@ pipelines:
                 - ansible_user=ec2-user
                 - -e
                 - ansible_password=DevOps321
-                - frontend.yml
+                - expense.yml
+                - -e
+                - role_name=frontend
                 command: ansible-playbook
                 run_if: passed
     - qa:
@@ -40,12 +42,14 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - frontend-qa.dkdevops.online,
+                    - frontend-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - frontend.yml
+                    - expense.yml
+                    - -e
+                    - role_name=frontend
                   command: ansible-playbook
                   run_if: passed
     - stage:
@@ -60,12 +64,14 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - frontend-stage.dkdevops.online,
+                    - frontend-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - frontend.yml
+                    - expense.yml
+                    - -e
+                    - role_name=frontend
                   command: ansible-playbook
                   run_if: passed
     - prod:
@@ -80,12 +86,14 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - frontend-prod.dkdevops.online,
+                    - frontend-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
-                    - frontend.yml
+                    - expense.yml
+                    - -e
+                    - role_name=frontend
                   command: ansible-playbook
                   run_if: passed
 

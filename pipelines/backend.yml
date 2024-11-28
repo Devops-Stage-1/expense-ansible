@@ -24,8 +24,7 @@ pipelines:
                 - ansible_user=ec2-user
                 - -e
                 - ansible_password=DevOps321
-                - -e
-                - ansible_python_interpreter=/usr/bin/python3.9
+                - expense.yml
                 - -e
                 - role_name=backend
                 command: ansible-playbook
@@ -41,11 +40,12 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - backend-qa.dkdevops.online,
+                    - backend-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
+                    - expense.yml
                     - -e
                     - role_name=backend
                   command: ansible-playbook
@@ -61,11 +61,12 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - backend-stage.dkdevops.online,
+                    - backend-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
+                    - expense.yml
                     - -e
                     - role_name=backend
                   command: ansible-playbook
@@ -81,11 +82,12 @@ pipelines:
               - exec:
                   arguments:
                     - -i
-                    - backend-prod.dkdevops.online,
+                    - backend-dev.dkdevops.online,
                     - -e
                     - ansible_user=ec2-user
                     - -e
                     - ansible_password=DevOps321
+                    - expense.yml
                     - -e
                     - role_name=backend
                   command: ansible-playbook

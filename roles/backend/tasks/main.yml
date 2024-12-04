@@ -22,6 +22,8 @@
   ansible.builtin.file:
     path: /app
     state: directory
+    owner: expense
+    group: expense
 
 - name: Unarchive a file that needs to be downloaded (added in 2.0)
   ansible.builtin.unarchive:
@@ -33,6 +35,8 @@
   community.general.npm:
     path: /app
     state: latest
+    owner: expense
+    group: expense
 
 - name: Copy backend service file
   ansible.builtin.template:
@@ -64,6 +68,8 @@
   ansible.builtin.import_role:
     name: newrelic
     tasks_from: nodejs
+    owner: expense
+    group: expense
 
 - name: Start Backend Service
   ansible.builtin.systemd_service:

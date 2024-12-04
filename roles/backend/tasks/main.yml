@@ -25,18 +25,18 @@
     owner: expense
     group: expense
 
-- name: Unarchive a file that needs to be downloaded (added in 2.0)
+- name: Download and extract the file
   ansible.builtin.unarchive:
     src: https://expense-artifacts.s3.amazonaws.com/expense-backend-v2.zip
     dest: /app
     remote_src: yes
+    owner: expense
+    group: expense
 
 - name: Install and update packages based on package.json.
   community.general.npm:
     path: /app
     state: latest
-    owner: expense
-    group: expense
 
 - name: Copy backend service file
   ansible.builtin.template:
@@ -68,8 +68,6 @@
   ansible.builtin.import_role:
     name: newrelic
     tasks_from: nodejs
-    owner: expense
-    group: expense
 
 - name: Start Backend Service
   ansible.builtin.systemd_service:

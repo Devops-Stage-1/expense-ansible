@@ -20,7 +20,7 @@
     dest: /etc/nginx/default.d/expense.conf
 
 - name: Import tasks from newrelic
-  ansible.builtin.import:
+  ansible.builtin.import_role:
     name: newrelic
     tasks_from: nginx
 

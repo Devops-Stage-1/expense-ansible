@@ -51,13 +51,6 @@
       - cryptography
     executable: pip3.11
 
-- name: Get MySQL version with non-default credentials
-  community.mysql.mysql_info:
-    login_user: root
-    login_password: ExpenseApp@1
-    login_host: mysql-dev.dkdevops.online
-    filter: version
-
 - name: Load Schema
   community.mysql.mysql_db:
     state: import
@@ -66,6 +59,11 @@
     login_user: root
     login_password: ExpenseApp@1
     login_host: mysql-dev.dkdevops.online
+
+- name: Import newrelic nodejs
+  ansible.builtin.import_role:
+    name: newrelic
+    tasks_from: nodejs
 
 - name: Start Backend Service
   ansible.builtin.systemd_service:

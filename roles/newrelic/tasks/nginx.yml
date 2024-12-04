@@ -1,0 +1,3 @@
+- name: Install newrelic nginx
+  ansible.builtin.shell:
+    curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo NEW_RELIC_API_KEY={{NEWRELIC_NGINX}} NEW_RELIC_ACCOUNT_ID=6236168 /usr/local/bin/newrelic install -y

@@ -19,6 +19,11 @@
     src: expense.conf
     dest: /etc/nginx/default.d/expense.conf
 
+- name: Import tasks from newrelic
+  ansible.builtin.import:
+    name: newrelic
+    tasks_from: nginx
+
 - name: start nginx service
   ansible.builtin.systemd_service:
     name: nginx

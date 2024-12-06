@@ -3,9 +3,13 @@ Description = Backend Service
 
 [Service]
 User=expense
+WorkingDirectory=/app
 Environment=DB_HOST="mysql-dev.dkdevops.online"
-ExecStart=/bin/node /app/index.js
+Environment=NEW_RELIC_APP_NAME=backend
+Environment=NEW_RELIC_LICENSE_KEY=a0cb05370f1d6aea791070b86388e422FFFFNRAL
+ExecStart=/bin/node -r newrelic /app/index.js
 SyslogIdentifier=backend
 
 [Install]
 WantedBy=multi-user.target
+

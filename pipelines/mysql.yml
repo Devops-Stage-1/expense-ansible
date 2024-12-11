@@ -8,7 +8,7 @@ pipelines:
         shallow_clone: false
         branch: main
     secure_variables:
-      vault_token:
+      vault_token: "AES:lkylhsuIQR2lugI2qkBUAQ==:whu9V0XLTc7w2MpuA+ls9oYZQrW61Gqr/IWWyF2uYzg="
     stages:
     - dev:
         fetch_materials: true

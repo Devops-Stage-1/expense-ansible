@@ -19,8 +19,6 @@ pipelines:
               tasks:
                 - exec:
                     arguments:
-                      - ansible.sh
-                      - mysql
                       - -i
                       - $component-dev.dkdevops.online,
                       - -e

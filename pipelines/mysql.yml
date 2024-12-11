@@ -10,20 +10,19 @@ pipelines:
     secure_variables:
       vault_token: AES:27DI0XfekZp8epZoWyANtw==:yQe3sMdbuPiKYIUYlxzNbwpmfNOTh46VjrbwSOw8Gxg=
     stages:
-    - dev:
-        fetch_materials: true
-        approval:
-          type: manual
-        jobs:
-          Test:
-            timeout: 0
-            tasks:
-            - exec:
-                arguments:
-                  - ansible.sh
-                  - mysql
-                command: bash
-                run_if: passed
+      - DEV:
+          fetch_materials: true
+          approval:
+            type: manual
+          jobs:
+            ansible-playbook:
+              tasks:
+                - exec:
+                    arguments:
+                      - ansible.sh
+                      - mysql
+                    command: bash #bash ansible.sh mysql
+                    run_if: passed
     - qa:
         fetch_materials: true
         approval:

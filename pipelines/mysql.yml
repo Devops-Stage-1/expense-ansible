@@ -20,7 +20,7 @@ pipelines:
                 - exec:
                     arguments:
                       - -i
-                      - $component-dev.dkdevops.online,
+                      - mysql-dev.dkdevops.online,
                       - -e
                       - "@secrets.json"
                       - expense.yml

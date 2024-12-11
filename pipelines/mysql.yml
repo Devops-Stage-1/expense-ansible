@@ -21,7 +21,14 @@ pipelines:
                     arguments:
                       - ansible.sh
                       - mysql
-                    command: bash #bash ansible.sh mysql
+                      - -i
+                      - $component-dev.dkdevops.online,
+                      - -e
+                      - "@secrets.json"
+                      - expense.yml
+                      - -e
+                      - role_name=mysql
+                    command: ansible-playbook #bash ansible.sh mysql
                     run_if: passed
 
 

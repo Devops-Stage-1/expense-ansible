@@ -1,1 +1,2 @@
 component: mysql
+logstash_configuration_needed: false

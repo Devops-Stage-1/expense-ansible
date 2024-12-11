@@ -1,1 +1,3 @@
 component: frontend
+log_file: /var/log/nginx/access.log
+logstash_configuration_needed: false

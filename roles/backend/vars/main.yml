@@ -1,1 +1,3 @@
 component: backend
+
+logstash_configuration_needed: false

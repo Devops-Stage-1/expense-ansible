@@ -19,14 +19,17 @@ pipelines:
               tasks:
                 - exec:
                     arguments:
-                      - -i
-                      - mysql-dev.dkdevops.online,
-                      - -e
-                      - "@secrets.json"
-                      - expense.yml
-                      - -e
-                      - role_name=mysql
-                    command: ansible-playbook #bash ansible.sh mysql
+                      #- -i
+                      #- mysql-dev.dkdevops.online,
+                      #- -e
+                      #- "@secrets.json"
+                      #- expense.yml
+                      #- -e
+                      #- role_name=mysql
+                      - ansible.sh
+                      - mysql
+                    #command: ansible-playbook #bash ansible.sh mysql
+                    command: bash
                     run_if: passed
 
 

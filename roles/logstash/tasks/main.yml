@@ -3,15 +3,15 @@
     src: elastic.repo
     dest: /etc/yum.repos.d/elastic.repo
 
-- name: Copy logstash conf file
-  ansible.builtin.template:
-    src: logstash.conf
-    dest: /etc/logstash/conf.d/logstash.conf
-
 - name: Install logstash
   ansible.builtin.dnf:
     name: logstash
     state: installed
+
+- name: Copy logstash conf file
+  ansible.builtin.template:
+    src: logstash.conf
+    dest: /etc/logstash/conf.d/logstash.conf
 
 - name: Start Grafana
   ansible.builtin.systemd_service:

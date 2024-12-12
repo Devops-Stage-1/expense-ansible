@@ -1,3 +1,4 @@
 component: backend
 rsyslog_config_needed: true
 logstash_configuration_needed: true
+log_file: /var/log/backend.log

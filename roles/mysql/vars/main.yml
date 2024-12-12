@@ -1,2 +1,3 @@
 component: mysql
 logstash_configuration_needed: false
+node_exporter_needed: false

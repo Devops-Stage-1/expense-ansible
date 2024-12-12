@@ -5,7 +5,7 @@
   ansible.builtin.import_role:
     name: prometheus
     tasks_from: node_exporter
-  when: node_exporter_needed
+
 - name: Import tasks from logstash
   ansible.builtin.import_role:
     name: logstash

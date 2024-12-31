@@ -1,0 +1,19 @@
+- name: Cleaning the directory
+  ansible.builtin.file:
+    path: "{{path}}"
+    state: absent
+
+- name: Create app directory
+  ansible.builtin.file:
+    path: "{{path}}"
+    state: directory
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"
+
+- name: Download and extract the file
+  ansible.builtin.unarchive:
+    src: https://expense-artifacts.s3.amazonaws.com/expense-{{ component }}-v2.zip
+    dest: /app
+    remote_src: yes
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"

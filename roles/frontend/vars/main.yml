@@ -1,3 +1,5 @@
 component: frontend
+path: /usr/share/nginx/html
+app_user: nginx
 log_file: /var/log/nginx/access.log
 logstash_configuration_needed: true

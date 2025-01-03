@@ -7,6 +7,8 @@ pipelines:
         git: https://github.com/Devops-Stage-1/expense-ansible.git
         shallow_clone: false
         branch: main
+    environment_variables:
+      env: dev
     secure_variables:
       vault_token: AES:N5JXJVhIJm9y2HkjtQm41w==:aGpaK62yFUdVnCjl7sFPepVyPAL29mSTMXFQdY/tBnk=
     stages:

@@ -46,7 +46,7 @@
     name: all
     target: /app/schema/backend.sql
     login_user: "{{ rds_username }}"
-    login_password: "{{ mysql_root_password }}"
+    login_password: "{{ rds_password }}"
     login_host: "{{ rds_endpoint }}"
 
 - name: Import newrelic nodejs

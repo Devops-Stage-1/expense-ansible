@@ -7,13 +7,15 @@ pipelines:
         git: https://github.com/Devops-Stage-1/expense-ansible.git
         shallow_clone: false
         branch: main
-    environment_variables:
-      env: dev
     secure_variables:
       vault_token: AES:KjNW8iXptaW+i8jH2rZ6yg==:Tj+j15Thnd8aioQD6Ecu6trMWY8eGltB+o96M+tF7t8=
+    environment_variables:
+      APP_VERSION: ""
     stages:
     - dev:
         fetch_materials: true
+        environment_variables:
+          env: dev
         approval:
           type: manual
         jobs:

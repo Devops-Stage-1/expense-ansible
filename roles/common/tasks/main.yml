@@ -1,18 +1,20 @@
 - name: Set-prompt
   ansible.builtin.shell: set-prompt {{ component }}
+  when: not only_deployment | bool
 
 - name: Install Node_exporter
   ansible.builtin.import_role:
     name: prometheus
     tasks_from: node_exporter
+  when: not only_deployment | bool
 
 - name: Import tasks from logstash
   ansible.builtin.import_role:
     name: logstash
     tasks_from: main
-  when: logstash_configuration_needed
+  when: logstash_configuration_needed | not only_deployment | bool
 
 - name: Rsyslog Configuration
   ansible.builtin.import_role:
     name: rsyslog
-  when: rsyslog_config_needed
+  when: rsyslog_config_needed | not only_deployment | bool

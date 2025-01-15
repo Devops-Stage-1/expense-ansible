@@ -17,3 +17,11 @@
     remote_src: yes
     owner: "{{ app_user }}"
     group: "{{ app_user }}"
+
+- name: Download and extract the file
+  ansible.builtin.unarchive:
+    src: http://{{artifactory_user}}:{{artifactory_password}}@artifactory-internal.rdevops6a.online:8081/artifactory/expense-{{ component }}/{{APP_VERSION}}.zip
+    dest: "{{path}}"
+    remote_src: yes
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"

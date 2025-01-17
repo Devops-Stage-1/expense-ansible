@@ -18,10 +18,10 @@
     name: common
     tasks_from: app-pre-req
 
-- name: Install and update packages based on package.json.
-  community.general.npm:
-    path: /app
-    state: latest
+#- name: Install and update packages based on package.json.
+#  community.general.npm:
+#    path: /app
+#    state: latest
 
 - name: Copy backend service file
   ansible.builtin.template:

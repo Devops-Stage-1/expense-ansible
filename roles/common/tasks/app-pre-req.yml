@@ -1,27 +1,27 @@
 - name: Cleaning the directory
   ansible.builtin.file:
-    path: "{{path}}"
+    path: "{{app_loc}}"
     state: absent
 
 - name: Create app directory
   ansible.builtin.file:
-    path: "{{path}}"
+    path: "{{app_loc}}"
     state: directory
     owner: "{{ app_user }}"
     group: "{{ app_user }}"
 
-- name: Download and extract the file
-  ansible.builtin.unarchive:
-    src: https://expense-artifacts.s3.amazonaws.com/expense-{{ component }}-v2.zip
-    dest: "{{path}}"
-    remote_src: yes
-    owner: "{{ app_user }}"
-    group: "{{ app_user }}"
+#- name: Download and extract the file
+#  ansible.builtin.unarchive:
+#    src: https://expense-artifacts.s3.amazonaws.com/expense-{{ component }}-v2.zip
+#    dest: "{{path}}"
+#    remote_src: yes
+#    owner: "{{ app_user }}"
+#    group: "{{ app_user }}"
 
 - name: Download and extract the file
   ansible.builtin.unarchive:
     src: http://{{artifactory_user}}:{{artifactory_password}}@artifactory-internal.rdevops6a.online:8081/artifactory/expense-{{ component }}/{{APP_VERSION}}.zip
-    dest: "{{path}}"
+    dest: "{{app_loc}}"
     remote_src: yes
     owner: "{{ app_user }}"
     group: "{{ app_user }}"

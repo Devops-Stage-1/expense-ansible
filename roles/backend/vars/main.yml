@@ -1,5 +1,5 @@
 component: backend
-path: /app
+app_loc: /app
 app_user: expense
 rsyslog_config_needed: true
 logstash_configuration_needed: true

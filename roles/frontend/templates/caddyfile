@@ -1,5 +1,7 @@
-servers {
-        metrics
+{
+  admin :2019
+  servers {
+          metrics
 }
 
 :80 {

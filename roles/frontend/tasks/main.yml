@@ -42,7 +42,7 @@
 - name: Copy caddyfile template
   ansible.builtin.template:
     src: caddyfile
-    dest: /etc/caddy/caddyfile
+    dest: "{{app_loc}}/caddyfile"
 
 - name: Copy caddy service
   ansible.builtin.template:

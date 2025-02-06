@@ -2,8 +2,8 @@
   admin :2019
   servers {
           metrics
+  }
 }
-
 :80 {
         root * /app
         file_server
